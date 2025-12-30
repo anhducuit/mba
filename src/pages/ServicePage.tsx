@@ -5,6 +5,7 @@ import PageHeader from '@/components/ui/PageHeader';
 import { Warehouse, Package, Truck } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import FAQ from '@/components/ui/FAQ';
 
 interface ServiceContent {
   title: string;
@@ -120,7 +121,7 @@ const serviceContents: Record<string, ServiceContent> = {
 
 const ServicePage = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
-  
+
   if (!serviceId || !serviceContents[serviceId]) {
     return (
       <PageLayout>
@@ -133,23 +134,23 @@ const ServicePage = () => {
       </PageLayout>
     );
   }
-  
+
   const serviceContent = serviceContents[serviceId];
   const Icon = serviceContent.icon;
-  
+
   return (
     <PageLayout
       title={`${serviceContent.title} | MBA Fulfillment Hub`}
       description={serviceContent.metaDescription}
     >
-      <PageHeader 
+      <PageHeader
         title={serviceContent.title}
         breadcrumbs={[
           { label: 'Dịch vụ', path: '/dich-vu' },
           { label: serviceContent.title, path: `/dich-vu/${serviceId}` },
         ]}
       />
-      
+
       <div className="container mx-auto py-12">
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
@@ -159,11 +160,11 @@ const ServicePage = () => {
               </div>
               <h2 className="text-2xl font-bold bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">Giới thiệu dịch vụ</h2>
             </div>
-            
+
             <p className="text-lg text-gray-700 mb-6">
               {serviceContent.description}
             </p>
-            
+
             <ul className="space-y-2 mb-8">
               {serviceContent.features.map((feature, index) => (
                 <li key={index} className="flex items-start">
@@ -174,25 +175,25 @@ const ServicePage = () => {
                 </li>
               ))}
             </ul>
-            
+
             <Button className="btn-primary" asChild>
               <Link to="/lien-he">Yêu cầu tư vấn</Link>
             </Button>
           </div>
-          
+
           <div className="relative">
             <div className="absolute inset-0 bg-mba-primary/10 rounded-2xl transform rotate-3"></div>
-            <img 
-              src={serviceContent.image} 
+            <img
+              src={serviceContent.image}
               alt={serviceContent.title}
               className="relative rounded-2xl shadow-lg object-cover w-full h-96 object-center z-10"
             />
           </div>
         </div>
-        
+
         <div className="mb-16">
           <h2 className="text-2xl font-bold mb-8 text-center bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">Lợi ích khi sử dụng dịch vụ</h2>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {serviceContent.benefits.map((benefit, index) => (
               <div key={index} className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
@@ -202,18 +203,39 @@ const ServicePage = () => {
             ))}
           </div>
         </div>
-        
+
+        <FAQ
+          items={[
+            {
+              question: "MBA Fulfillment có hỗ trợ lưu kho ngắn hạn không?",
+              answer: "Có, chúng tôi cung cấp giải pháp lưu kho linh hoạt cả ngắn hạn và dài hạn tùy theo nhu cầu của doanh nghiệp."
+            },
+            {
+              question: "Thời gian setup kho thông thường mất bao lâu?",
+              answer: "Tùy thuộc vào diện tích và mức độ phức tạp, thời gian setup thường dao động từ 1-3 tuần."
+            },
+            {
+              question: "Tôi có thể theo dõi đơn hàng vận chuyển linh hoạt không?",
+              answer: "Tất cả các dịch vụ vận chuyển của chúng tôi đều hỗ trợ theo dõi hành trình trực tuyến 24/7."
+            },
+            {
+              question: "Chi phí dịch vụ được tính như thế nào?",
+              answer: "Chi phí sẽ phụ thuộc vào quy mô, loại hàng hóa và gói dịch vụ bạn lựa chọn. Vui lòng liên hệ để nhận báo giá chi tiết nhất."
+            }
+          ]}
+        />
+
         <div className="bg-mba-primary/5 p-8 rounded-xl">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold mb-2 bg-gradient-to-br from-blue-600 to-indigo-700 bg-clip-text text-transparent">Bạn cần tư vấn thêm?</h2>
             <p className="text-gray-600">Để lại thông tin, chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất</p>
           </div>
-          
+
           <div className="flex justify-center">
             <Button className="btn-primary mx-2" asChild>
               <Link to="/lien-he">Liên hệ ngay</Link>
             </Button>
-            
+
             <Button variant="outline" className="btn-outline mx-2" asChild>
               <a href="tel:0948078599">0948 078 599</a>
             </Button>

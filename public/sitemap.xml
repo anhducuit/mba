@@ -25,6 +25,42 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://mbafulfillment.vn/dich-vu/tu-van-setup-kho</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbafulfillment.vn/dich-vu/vat-tu-dong-goi</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbafulfillment.vn/dich-vu/van-chuyen-bac-nam</loc>
+    <lastmod>2025-05-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mbafulfillment.vn/blog/5-cach-toi-uu-chi-phi-van-hanh-kho-hang</loc>
+    <lastmod>2025-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mbafulfillment.vn/blog/huong-dan-lua-chon-vat-tu-dong-goi</loc>
+    <lastmod>2025-02-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mbafulfillment.vn/blog/giai-phap-van-chuyen-hang-hoa-bac-nam</loc>
+    <lastmod>2025-03-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://mbafulfillment.vn/blog</loc>
     <lastmod>2025-05-13</lastmod>
     <changefreq>weekly</changefreq>
